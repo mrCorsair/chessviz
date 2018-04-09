@@ -1,2 +1,2 @@
 all:
-	gcc -g -Wall -o input chesinput.c
+	g++ -g -Wall -o input chesinput.cpp
