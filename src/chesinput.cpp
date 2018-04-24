@@ -19,12 +19,14 @@ int main(){
 	while(1){
 		printf("player 1-not caps:");
 		scanh(x1,y1,x2,y2,desk,1);
+		if(strcmp(desk[0],"0")==0)break;
 		desk[x2][y2]=desk[x1][y1];
 		if((x1+y1)%2)desk[x1][y1]=' ';
 		else desk[x1][y1]=(char)219;
 		printdesk(desk);
 		printf("player 2-caps:");
 		scanh(x1,y1,x2,y2,desk,2);
+		if(strcmp(desk[0],"0")==0)break;
 		desk[x2][y2]=desk[x1][y1];
 		if((x1+y1)%2)desk[x1][y1]=' ';
 		else desk[x1][y1]=(char)219;

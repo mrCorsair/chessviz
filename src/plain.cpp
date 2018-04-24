@@ -5,6 +5,10 @@ void scanh(int &x1, int &y1, int &x2, int &y2,char desk[][9],int flag){
 	char tempxy[6];
 	while(1){
 		scanf("%s",tempxy);
+		if(strcmp(tempxy,"exit")==0||strcmp(tempxy,"0")==0){ 
+			strcpy(desk[0],"0");
+			break;
+			}
 		x1=(int)tempxy[1]-49;
 		y1=(int)tempxy[0]-97;
 		x2=(int)tempxy[4]-49;
