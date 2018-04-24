@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include "board_print_plain.cpp"
-#include "plain.cpp"
+#include "board_print_plain.h"
+#include "plain.h"
 
 int main(){
 	int x1,y1,x2,y2;

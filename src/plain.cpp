@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void scanh(int &x1, int &y1, int &x2, int &y2,char desk[][9],int flag){
 	char tempxy[6];
