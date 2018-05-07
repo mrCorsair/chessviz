@@ -1,4 +1,10 @@
-all: prog
+all:bin build prog
+
+bin:
+	mkdir -p bin
+
+build:
+	mkdir -p build
 
 prog: build/chesinput.o build/board_print_plain.o build/plain.o
 	g++ -Wall -Werror build/chesinput.o build/board_print_plain.o build/plain.o -o prog
@@ -14,4 +20,4 @@ build/plain.o: src/plain.cpp
 	
 .PHONY: clean
 clean:
-	rm -rf build/*.o
+	rm -rf build bin
