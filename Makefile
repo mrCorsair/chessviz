@@ -1,20 +1,17 @@
-.PHONY: all clean install uninstall
-CC=g++
-CFLAGS=-c -Wall
-GCCFLAGS = -c -Wall -Werror
-VPATH = src
-PATH_SRC = ./src/
-PATH_BUILD = ./build/
-SOURCES=chesinput.cpp board_print_plain.cpp plain.cpp
-OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=prog
+all: prog
 
-all: $(SOURCES) $(EXECUTABLE)
-	
-$(EXECUTABLE): $(OBJECTS) 
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+prog: build/chesinput.o build/board_print_plain.o build/plain.o
+	g++ -Wall -Werror build/chesinput.o build/board_print_plain.o build/plain.o -o prog
 
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+build/chesinput.o: src/chesinput.cpp
+	g++ -Wall -Werror -c src/chesinput.cpp -o build/chesinput.o
+
+build/board_print_plain.o: src/board_print_plain.cpp
+	g++ -Wall -Werror -c src/board_print_plain.cpp -o build/board_print_plain.o
+
+build/plain.o: src/plain.cpp
+	g++ -Wall -Werror -c src/plain.cpp -o build/plain.o 
 	
-clean: rm -rf *.o prog
+.PHONY: clean
+clean:
+	rm -rf build/*.o

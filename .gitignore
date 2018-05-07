@@ -1,2 +1,2 @@
-*.[oa]
-input
+*.o
+prog

@@ -1,12 +1,40 @@
 #include <stdio.h>
 #include <string.h>
 
-void scanh(int &x1, int &y1, int &x2, int &y2,char desk[][9],int flag){
+extern int game;
+extern int x1,y1,x2,y2;
+extern char desk[9][9];
+
+int check1(){
+	switch (desk[x1][y1]){
+	case 'p':
+		if(desk[x2][y2]<91 && desk[x2][y2]>64 && ((y1-y2)==1||(y2-y1)==1)&&(x1-x2==1))return 1;//рубим
+		if((desk[x2][y2]==(char)219||desk[x2][y2]==' ') && x1==6 && y1==y2 && x1-x2>0 && x1-x2<3) return 1;//ходы по пустым клеткам с начальной позиции
+		if((desk[x2][y2]==(char)219||desk[x2][y2]==' ') && y1==y2 && x1-x2==1) return 1;//по пустым
+		break;
+	return 0;
+}	
+return 0;
+}
+
+int check2(){
+	switch (desk[x1][y1]){
+	case 'P':
+		if(desk[x2][y2]<123 && desk[x2][y2]>96 && (y1-y2==1||y1-y2==-1)&&(x2-x1==1))return 1;//рубим
+		if((desk[x2][y2]==(char)219||desk[x2][y2]==' ') && x1==1 && y1==y2 && x2-x1>0 && x2-x1<3) return 1;//по пустым клеткам с начальной позиции
+		if((desk[x2][y2]==(char)219||desk[x2][y2]==' ') && y1==y2 && x2-x1==1) return 1;//по пустым
+		break;
+	return 0;	
+}
+return 0;
+}
+
+void scanh(int flag){
 	char tempxy[6];
 	while(1){
 		scanf("%s",tempxy);
 		if(strcmp(tempxy,"exit")==0||strcmp(tempxy,"0")==0){ 
-			strcpy(desk[0],"0");
+			game=-1;
 			break;
 			}
 		x1=(int)tempxy[1]-49;
@@ -14,12 +42,14 @@ void scanh(int &x1, int &y1, int &x2, int &y2,char desk[][9],int flag){
 		x2=(int)tempxy[4]-49;
 		y2=(int)tempxy[3]-97;
 		if (flag==1){
-			if(desk[x1][y1]<123 && desk[x1][y1]>96&&strlen(tempxy)==5)break;
+			if(check1()==1&&strlen(tempxy)==5)break;
 			else printf("error, try again:");
 			}
 		if (flag==2){ 
-			if(desk[x1][y1]<91 && desk[x1][y1]>64&&strlen(tempxy)==5)break;
+			if(check2()==1&&strlen(tempxy)==5)break;
 			else printf("error, try again:");
 		}
 	}
 }
+
+

@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-void printdesk (char desk[9][9]){
+extern int game;
+extern int x1,y1,x2,y2;
+extern char desk[9][9];
+
+void printdesk (){
 	for(int i=0;i<8;i++){
 	printf("%d|",i+1);
 	for(int j=0;j<8;j++){
