@@ -4,7 +4,7 @@
 #include "plain.h"
 
 int game=0;
-int x1,y1,x2,y2;
+int x1,y11,x2,y2;
 char desk[9][9]={
 	{'R','H','B','Q','K','B','H','R'},
 	{'P','P','P','P','P','P','P','P'},
@@ -22,17 +22,13 @@ int main(){
 		printf("player 1-not caps:");
 		scanh(1);
 		if(game!=0)break;
-		desk[x2][y2]=desk[x1][y1];
-		if((x1+y1)%2)desk[x1][y1]=' ';
-		else desk[x1][y1]=(char)219;
+		muve();
 		printdesk();
 		printf("player 2-caps:");
 		scanh(2);
 		if(game!=0)break;
-		desk[x2][y2]=desk[x1][y1];
-		if((x1+y1)%2)desk[x1][y1]=' ';
-		else desk[x1][y1]=(char)219;
+		muve();
 		printdesk();
 	}
-	printf("Exit stsyus:%d\n",game);
+	printf("Exit status:%d\n",game);
 }
