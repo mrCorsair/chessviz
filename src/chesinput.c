@@ -23,12 +23,17 @@ int main(){
 		scanh(1);
 		if(game!=0)break;
 		muve();
+		printf("\033[2J"); /* Clear the entire screen. */ 
+		printf("\033[0;0f"); /* Move cursor to the top left hand corner */
 		printdesk();
 		printf("player 2-caps:");
 		scanh(2);
 		if(game!=0)break;
 		muve();
+		printf("\033[2J"); /* Clear the entire screen. */ 
+		printf("\033[0;0f"); /* Move cursor to the top left hand corner */
 		printdesk();
 	}
-	printf("Exit status:%d\n",game);
+	if(game>0)printf("Plauer%d win",game);
+	else printf("Exit status:%d\n",game);
 }

@@ -20,5 +20,5 @@ void muve();
 
 #ifndef H_inter
 #define H_inter
-void inter(char tempxy[6]);
+int inter(char tempxy[6]);
 #endif
