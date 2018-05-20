@@ -3,6 +3,11 @@
 void scanh(int flag);
 #endif
 
+#ifndef H_check_win
+#define H_check_win
+void check_win();
+#endif
+
 #ifndef H_ch1
 #define H_ch1
 int check1();
@@ -21,4 +26,9 @@ void muve();
 #ifndef H_inter
 #define H_inter
 int inter(char tempxy[6]);
+#endif
+
+#ifndef H_pr
+#define H_pr
+int pr();
 #endif
