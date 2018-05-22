@@ -4,7 +4,7 @@
 #include "../src/plain.h"
 #include "../thirdparty/ctest.h"
 
-int game=0;
+int game=0,i,j;
 int x1,y11,x2,y2;
 char desk[9][9]={
 	{'R','H','B','Q','K','B','H','R'},
@@ -46,7 +46,6 @@ CTEST(input,interpreter)
 
 CTEST(move_suite, move_pawn) // Ход пешки 
 {	
-	int i,j;
 	for(i=0;i<8;i++){
 		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
@@ -102,7 +101,6 @@ CTEST(move_suite, move_pawn) // Ход пешки
 
 CTEST(move_suite, move_pawn2) // Ход пешки 2
 {	
-	int i,j;
 	for(i=0;i<8;i++){
 		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
@@ -159,7 +157,6 @@ CTEST(move_suite, move_pawn2) // Ход пешки 2
 CTEST(move_suite, move_rook) // Ход Ладьи
 {
 	//GIVEN
-	int i,j;
 	for(i=0;i<8;i++){
 		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
@@ -225,7 +222,6 @@ CTEST(move_suite, move_rook) // Ход Ладьи
 CTEST(move_suite, move_hourse) // Ход коня
 {
 	//GIVEN
-	int i,j;
 	for(i=0;i<8;i++){
 		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
@@ -263,7 +259,6 @@ CTEST(move_suite, move_hourse) // Ход коня
 	desk[x1][y11]='H';
 	int c5=check2();
 	
-	int i,j;
 	for(i=0;i<8;i++){
 		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
@@ -348,7 +343,6 @@ CTEST(move_suite, move_hourse) // Ход коня
 CTEST(move_suite, move_bishop) // Ход Cлона
 {
 		//GIVEN
-	int i,j;
 	for(i=0;i<8;i++){
 		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
@@ -426,7 +420,6 @@ CTEST(move_suite, move_bishop) // Ход Cлона
 CTEST(move_suite, move_king) // Ход короля
 {
 		//GIVEN
-	int i,j;
 	for(i=0;i<8;i++){
 		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
@@ -509,7 +502,6 @@ CTEST(move_suite, move_king) // Ход короля
 CTEST(move_suite, move_queen) // Ход королева
 {
 		//GIVEN
-	int i,j;
 	for(i=0;i<8;i++){
 		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
