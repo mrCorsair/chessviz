@@ -46,8 +46,9 @@ CTEST(input,interpreter)
 
 CTEST(move_suite, move_pawn) // Ход пешки 
 {	
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
@@ -101,8 +102,9 @@ CTEST(move_suite, move_pawn) // Ход пешки
 
 CTEST(move_suite, move_pawn2) // Ход пешки 2
 {	
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
@@ -157,8 +159,9 @@ CTEST(move_suite, move_pawn2) // Ход пешки 2
 CTEST(move_suite, move_rook) // Ход Ладьи
 {
 	//GIVEN
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
@@ -222,8 +225,9 @@ CTEST(move_suite, move_rook) // Ход Ладьи
 CTEST(move_suite, move_hourse) // Ход коня
 {
 	//GIVEN
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
@@ -259,8 +263,9 @@ CTEST(move_suite, move_hourse) // Ход коня
 	desk[x1][y11]='H';
 	int c5=check2();
 	
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
@@ -289,8 +294,8 @@ CTEST(move_suite, move_hourse) // Ход коня
 	inter(txy);
 	int c10=check2();
 	
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
@@ -343,8 +348,9 @@ CTEST(move_suite, move_hourse) // Ход коня
 CTEST(move_suite, move_bishop) // Ход Cлона
 {
 		//GIVEN
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
@@ -420,8 +426,9 @@ CTEST(move_suite, move_bishop) // Ход Cлона
 CTEST(move_suite, move_king) // Ход короля
 {
 		//GIVEN
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
@@ -502,8 +509,9 @@ CTEST(move_suite, move_king) // Ход короля
 CTEST(move_suite, move_queen) // Ход королева
 {
 		//GIVEN
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
