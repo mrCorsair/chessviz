@@ -6,9 +6,9 @@ extern int x1,y11,x2,y2;
 extern char desk[9][9];
 
 void check_win(){
-	int Pl1=0,Pl2=0;
-	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++){
+	int Pl1=0,Pl2=0,i,j;
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
 			if(desk[i][j]=='Q')Pl2++;
 			if(desk[i][j]=='q')Pl1++;
 		}
@@ -58,24 +58,24 @@ int pr_diag(){
 
 int pr_x(){
 	if(y11!=y2)return 0;
-	int z1=x1,z2=x2;
+	int z1=x1,z2=x2,i;
 	if(x1>x2){
 		z2=x1;
 		z1=x2;
 	}
-	for(int i=z1+1;i<z2;i++)
+	for(i=z1+1;i<z2;i++)
 		if((desk[i][y11]<91 && desk[i][y11]>64)||(desk[i][y11]<123 && desk[i][y11]>96))return 0;
 	return 1;
 }
 
 int pr_y(){
 	if(x1!=x2)return 0;
-	int z1=y11,z2=y2;
+	int z1=y11,z2=y2,i;
 	if(y11>y2){
 		z2=y11;
 		z1=y2;
 	}
-	for(int i=z1+1;i<z2;i++)
+	for(i=z1+1;i<z2;i++)
 		if((desk[x1][i]<91 && desk[x1][i]>64)||(desk[x1][i]<123 && desk[x1][i]>96))return 0;
 	return 1;
 }
