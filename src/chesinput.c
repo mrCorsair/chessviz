@@ -46,4 +46,5 @@ int main(){
 	}
 	if(game>0)printf("Plauer %d win\n",game);
 	else printf("Exit status:%d\n",game);
+	return 0;
 }

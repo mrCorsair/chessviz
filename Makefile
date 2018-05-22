@@ -1,6 +1,6 @@
+all:bin build bin/test bin/prog
 prog:bin build bin/prog
 test:bin build bin/test
-all:bin build bin/test bin/prog
 
 bin:
 	mkdir -p bin
