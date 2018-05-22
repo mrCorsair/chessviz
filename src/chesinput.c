@@ -16,12 +16,12 @@ char desk[9][9]={
 	{'r','h','b','k','q','b','h','r'}};
 	
 int main(){
-	for(int i=1;i<7;i++){
+	/*for(int i=1;i<7;i++){
 		for(int j=0;j<8;j++){
 			if((i+j)%2)desk[i][j]=' ';
 			else desk[i][j]=(char)219;
 		}
-	}
+	}*/
 	printdesk();
 	printf("an example of course:e2-e4\n");
 	while(1){
